@@ -8,7 +8,7 @@
 function extJS_setStyle() {
 	let date = new Date();
 	let hours = date.getHours();
-	let elID = '#section-main';
+	let elID = '#section-info';
 
 	if (0 <= hours && hours < 5) {
 		jQuery(elID).addClass('is-dark');
