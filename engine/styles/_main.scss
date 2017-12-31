@@ -1,0 +1,44 @@
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.hero {
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-head,
+.hero-foot {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+#particles-js {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+
+#stats {
+	text-align: center;
+	.column {
+		span {
+			display: block;
+			background-color: #fff;
+			border-radius: 6px;
+			color: #000;
+			padding: 1rem .5rem;
+		}
+	}
+}

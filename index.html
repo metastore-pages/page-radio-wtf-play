@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru">
+<head prefix="og: http://ogp.me/ns#">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="radio, player, furry radio, фурри радио" />
+	<meta name="description" content="Плеер радио W.T.F. - радио открытого формата." />
+	<meta name="copyright" content="METADATA.Team" />
+	<meta name="theme-color" content="#f3f6f9" />
+	<title>Radio W.T.F. - Player</title>
+
+	<!-- open graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Radio W.T.F. - Player" />
+	<meta property="og:title" content="Radio W.T.F. - Player" />
+	<meta property="og:description" content="Плеер радио W.T.F. - радио открытого формата." />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="https://play.radio.wtf" />
+	<!-- / open graph -->
+
+	<!-- twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Radio W.T.F. - Player" />
+	<meta name="twitter:description" content="Плеер радио W.T.F. - радио открытого формата." />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:site" content="@furs_life" />
+	<meta name="twitter:creator" content="@furs_life" />
+	<!-- / twitter -->
+
+	<!-- styles -->
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i|Roboto:400,400i,700,700i|Fira+Mono:400,700&amp;subset=cyrillic" />
+	<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/bulma/css/bulma.min.css,npm/@fancyapps/fancybox/dist/jquery.fancybox.min.css" />
+	<link type="text/css" rel="stylesheet" href="engine/styles/theme.css" />
+	<!-- / styles -->
+
+	<!-- font awesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+	<!-- / font awesome -->
+
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<!-- / favicon -->
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<!-- section-info -->
+<section id="section-info" class="hero is-fullheight">
+	<div id="particles-js"></div>
+	<div class="hero-head">
+		<header class="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item" href="#">Радио W.T.F.</a>
+				</div>
+				<div class="navbar-menu">
+					<div class="navbar-end">
+						<a class="navbar-item" href="https://radio.wtf/" itemprop="url">
+							<span itemprop="name">Портал</span>
+						</a>
+						<a class="navbar-item" href="https://radio.wtf/?curid=6" itemprop="url">
+							<span itemprop="name">Сетка вещания</span>
+						</a>
+						<a class="navbar-item" href="https://radio.wtf/?curid=2" itemprop="url">
+							<span itemprop="name">О радио</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div class="hero-body">
+		<div class="container">
+			<h1 class="title">
+				Радио W.T.F.
+			</h1>
+			<h2 class="subtitle">
+				Независимая радиостанция в интернете (при поддержке <a href="https://furs.life/">FURS.Life</a>)
+			</h2>
+			<!-- player -->
+			<div id="player" class="columns">
+				<div class="column">
+					<div id="jp-init-radio" class="jp-init"></div>
+					<div id="jp-container-radio" class="jp-container jp-audio" role="application" aria-label="media player">
+						<div class="jp-type-single">
+							<div class="jp-gui jp-interface">
+								<div class="jp-controls">
+									<div class="jp-play jp-button"><i class="fas fa-play fa-fw"></i></div>
+									<div class="jp-pause jp-button"><i class="fas fa-pause fa-fw"></i></div>
+								</div>
+								<div class="jp-controls-meta">
+									<div class="jp-progress">
+										<div class="jp-timer-container">
+											<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+											<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+										</div>
+										<div class="jp-progress-bar-container">
+											<div class="jp-progress-bar">
+												<div class="jp-seek-bar">
+													<div class="jp-play-bar"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="jp-volume">
+										<div class="jp-volume-button-container">
+											<div class="jp-mute jp-button"><i class="fas fa-volume-off fa-fw"></i></div>
+											<div class="jp-volume-max jp-button"><i class="fas fa-volume-up fa-fw"></i>
+											</div>
+										</div>
+										<div class="jp-volume-bar-container">
+											<div class="jp-volume-bar">
+												<div class="jp-volume-bar-value"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / player -->
+			<!-- stats -->
+			<div id="stats" class="columns">
+				<div class="column is-4">
+					<span id="ice-stream-name"></span>
+				</div>
+				<div class="column is-clipped">
+					<span id="ice-stream-title"></span>
+				</div>
+				<!-- <div class="column is-1">
+					<span id="ice-stream-listeners"></span>
+				</div> -->
+			</div>
+			<!-- / stats -->
+		</div>
+	</div>
+	<div class="hero-foot">
+		<nav class="tabs is-boxed is-fullwidth" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<div class="container">
+				<ul>
+					<li>
+						<a href="https://discord.gg/YPJvhZy" itemprop="url">
+							<span itemprop="name">Discord</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/channel/UCFUmIIIOMdp4dX6zcvI6NSw" itemprop="url">
+							<span itemprop="name">YouTube</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.twitch.tv/furs_life" itemprop="url">
+							<span itemprop="name">Twitch</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://vk.com/furs.life" itemprop="url">
+							<span itemprop="name">ВКонтакте</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/furs.life" itemprop="url">
+							<span itemprop="name">Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/furs_life" itemprop="url">
+							<span itemprop="name">Twitter</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</section>
+<!-- / section-info -->
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/combine/npm/jquery,npm/clipboard/dist/clipboard.min.js,npm/moment,npm/moment-timezone/builds/moment-timezone-with-data.min.js,npm/@fancyapps/fancybox/dist/jquery.fancybox.min.js,npm/particles.js,npm/jplayer"></script>
+<script src="engine/scripts/theme.js"></script>
+<!-- / scripts -->
+
+</body>
+</html>

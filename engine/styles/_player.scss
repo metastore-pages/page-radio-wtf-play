@@ -1,0 +1,91 @@
+.jp-container {
+	display: block;
+	overflow: hidden;
+	color: #000;
+	* {
+		box-sizing: border-box;
+		line-height: 32px;
+	}
+	.jp-button {
+		cursor: pointer;
+	}
+	.jp-interface {
+		background: #fff;
+		border-radius: 6px;
+		line-height: 1;
+		overflow: hidden;
+		.jp-controls {
+			color: #000;
+			float: left;
+			height: 64px;
+			text-align: center;
+			width: 64px;
+			.jp-button {
+				line-height: 64px;
+				.fa {
+					vertical-align: middle;
+				}
+			}
+		}
+		.jp-controls-meta {
+			overflow: hidden;
+		}
+		.jp-progress,
+		.jp-volume {
+			overflow: hidden;
+		}
+		.jp-play {
+		}
+		.jp-pause {
+			display: none;
+		}
+		.jp-timer-container,
+		.jp-volume-button-container {
+			overflow: hidden;
+			float: left;
+			width: 128px;
+		}
+		.jp-progress-bar-container,
+		.jp-volume-bar-container {
+			$padding: 16px;
+			font-size: 0;
+			height: 32px;
+			padding-left: $padding;
+			padding-right: ($padding * 2);
+			margin-left: 128px;
+		}
+		.jp-current-time,
+		.jp-duration,
+		.jp-mute,
+		.jp-volume-max {
+			float: left;
+			height: 32px;
+			text-align: center;
+			width: 64px;
+		}
+		.jp-current-time,
+		.jp-duration {
+			font-family: 'Fira Mono', monospace;
+			font-size: 12px;
+		}
+		.jp-mute,
+		.jp-volume-max {
+			font-size: 16px;
+		}
+		.jp-progress-bar,
+		.jp-volume-bar {
+			background: #dbdbdb;
+			cursor: pointer;
+			display: inline-block;
+			height: 10px;
+			overflow: hidden;
+			vertical-align: middle;
+			width: 100%;
+		}
+		.jp-seek-bar,
+		.jp-volume-bar-value {
+			background: #0082b2;
+			height: 10px;
+		}
+	}
+}
