@@ -1,69 +1,6 @@
 'use strict';
 
 /**
- * Bulma.
- * ---------------------------------------------------------------------------------------------------------------------
- */
-
-document.addEventListener('DOMContentLoaded', function () {
-	function getAll(selector) {
-		return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-	}
-
-	let $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-	if ($navbarBurgers.length > 0) {
-		$navbarBurgers.forEach(function ($el) {
-			$el.addEventListener('click', function () {
-				let target = $el.dataset.target;
-				let $target = document.getElementById(target);
-				$el.classList.toggle('is-active');
-				$target.classList.toggle('is-active');
-
-			});
-		});
-	}
-
-	let rootEl = document.documentElement;
-	let $modals = getAll('.modal');
-	let $modalButtons = getAll('.modal-button');
-	let $modalCloses = getAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button');
-
-	if ($modalButtons.length > 0) {
-		$modalButtons.forEach(function ($el) {
-			$el.addEventListener('click', function () {
-				let target = $el.dataset.target;
-				let $target = document.getElementById(target);
-				rootEl.classList.add('is-clipped');
-				$target.classList.add('is-active');
-			});
-		});
-	}
-
-	if ($modalCloses.length > 0) {
-		$modalCloses.forEach(function ($el) {
-			$el.addEventListener('click', function () {
-				closeModals();
-			});
-		});
-	}
-
-	document.addEventListener('keydown', function (event) {
-		let e = event || window.event;
-		if (e.keyCode === 27) {
-			closeModals();
-			closeDropdowns();
-		}
-	});
-
-	function closeModals() {
-		rootEl.classList.remove('is-clipped');
-		$modals.forEach(function ($el) {
-			$el.classList.remove('is-active');
-		});
-	}
-});
-
-/**
  * Style.
  * ---------------------------------------------------------------------------------------------------------------------
  */
@@ -74,27 +11,27 @@ function extJS_setStyle() {
 	let elID = '#section-info';
 
 	if (0 <= hours && hours < 5) {
-		jQuery(elID).addClass('is-dark');
+		$(elID).addClass('is-dark');
 		particlesJS.load('particles-js', 'engine/scripts/particles.light.json');
 	}
 
 	if (5 <= hours && hours < 11) {
-		jQuery(elID).addClass('is-light');
+		$(elID).addClass('is-light');
 		particlesJS.load('particles-js', 'engine/scripts/particles.dark.json');
 	}
 
 	if (11 <= hours && hours < 16) {
-		jQuery(elID).addClass('is-info');
+		$(elID).addClass('is-info');
 		particlesJS.load('particles-js', 'engine/scripts/particles.light.json');
 	}
 
 	if (16 <= hours && hours < 22) {
-		jQuery(elID).addClass('is-info');
+		$(elID).addClass('is-info');
 		particlesJS.load('particles-js', 'engine/scripts/particles.light.json');
 	}
 
 	if (22 <= hours && hours <= 24) {
-		jQuery(elID).addClass('is-dark');
+		$(elID).addClass('is-dark');
 		particlesJS.load('particles-js', 'engine/scripts/particles.light.json');
 	}
 }
@@ -115,17 +52,17 @@ function extJS_initJPlayer() {
 
 	let ready = false;
 
-	jQuery('#jp-init-radio').jPlayer({
+	$('#jp-init-radio').jPlayer({
 		ready: function (event) {
 			ready = true;
-			jQuery(this).jPlayer('setMedia', jPRadioStream);
+			$(this).jPlayer('setMedia', jPRadioStream);
 		},
 		pause: function () {
-			jQuery(this).jPlayer('clearMedia');
+			$(this).jPlayer('clearMedia');
 		},
 		error: function (event) {
-			if (ready && event.jPlayer.error.type === jQuery.jPlayer.error.URL_NOT_SET) {
-				jQuery(this).jPlayer('setMedia', jPRadioStream).jPlayer('play');
+			if (ready && event.jPlayer.error.type === $.jPlayer.error.URL_NOT_SET) {
+				$(this).jPlayer('setMedia', jPRadioStream).jPlayer('play');
 			}
 		},
 		cssSelectorAncestor: '#jp-container-radio',
@@ -148,7 +85,7 @@ function extJS_initStats() {
 	let getJSON = 'https://stream.radio.wtf/radio.status.json.xsl';
 	let updateTime = 2000;
 
-	jQuery.ajax({
+	$.ajax({
 		url: getJSON,
 		method: 'GET',
 		dataType: 'json',
@@ -166,10 +103,10 @@ function extJS_initStats() {
 			stream = live;
 		}
 
-		let $elStreamName = jQuery('#ice-stream-name');
-		let $elStreamListeners = jQuery('#ice-stream-listeners');
-		let $elStreamTitle = jQuery('#ice-stream-title');
-		let $elStreamGenre = jQuery('#ice-stream-genre');
+		let $elStreamName = $('#ice-stream-name');
+		let $elStreamListeners = $('#ice-stream-listeners');
+		let $elStreamTitle = $('#ice-stream-title');
+		let $elStreamGenre = $('#ice-stream-genre');
 
 		let streamName = stream.name;
 		let streamListeners = stream.listeners;
@@ -190,10 +127,9 @@ function extJS_initStats() {
  * ---------------------------------------------------------------------------------------------------------------------
  */
 
-jQuery(window).on('load', function () {
-});
-
-jQuery(document).ready(function () {
+$(function () {
+	$(window).on('load', function () {
+	});
 	extJS_setStyle();
 	extJS_initJPlayer();
 	extJS_initStats();
